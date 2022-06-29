@@ -8,6 +8,7 @@ import { AreaPublicaComponent } from './area-publica/area-publica.component';
 import { AreaUsuarioLogadoComponent } from './area-usuario-logado/area-usuario-logado.component';
 import { AreaGerenteComponent } from './area-gerente/area-gerente.component';
 import { AreaAdministradorComponent } from './area-administrador/area-administrador.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AreaAdministradorComponent } from './area-administrador/area-administra
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,18 @@
 <div class="container">
     <br><br><br><br>
-    <div class="alert alert-success" role="alert">
+    <div *ngIf="permissao ==  1" class="alert alert-success" role="alert">
         Acesso concedido !
     </div>
-    <!--div class="alert alert-danger" role="alert">
+    <div *ngIf="permissao ==  0" class="alert alert-danger" role="alert">
         Acesso negado !
-    </div-->
+    </div>
 
     <br><br><br>
-    <div class="alert alert-secondary" role="alert">
-        Tempo gasto pelo algorítimo: x segundos
+    <div *ngIf="timer >=  0" class="alert alert-secondary" role="alert">
+        Tempo gasto pelo algorítimo: {{timer}} segundos
+    </div>
+
+    <div *ngIf="timer <  0" class="alert alert-secondary" role="alert">
+        Fazendo requisição...
     </div>
 </div>
