@@ -38,7 +38,9 @@ app.get(`${rootUrl}/user`, (req, res) => { res.json(user); });
 app.post(`${rootUrl}/user`, (req, res) => {
 
     ;(async () => {
-        const { rows } = await pool.query('SELECT test(0,1,1) as permissao');
+        console.log('requisicao: '+JSON.stringify(req.body.sujeito))
+        const { rows } = await pool.query("SELECT getpermissoes('"+req.body.sujeito+"','"+req.body.objeto+"','"+req.body.metodo+"') as permissao");
+        //const { rows } = await pool.query("select getpermissoes('USUARIO_PADRAO_123','publica','MT') as permissao");
         res.json(rows);
       })().catch(err => {
         res.json(err.stack)

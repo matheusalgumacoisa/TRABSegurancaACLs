@@ -9,6 +9,7 @@ import { AreaUsuarioLogadoComponent } from './area-usuario-logado/area-usuario-l
 import { AreaGerenteComponent } from './area-gerente/area-gerente.component';
 import { AreaAdministradorComponent } from './area-administrador/area-administrador.component';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from "@angular/forms"
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

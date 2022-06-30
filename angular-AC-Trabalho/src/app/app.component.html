@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col">
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <input class="form-check-input" [(ngModel)]="tipo" [ng-value]="MT" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
         <label class="form-check-label" for="flexRadioDefault1">
           Matriz de controle de acesso
         </label>
@@ -14,28 +14,28 @@
     </div>
     <div class="col">
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <input class="form-check-input" [(ngModel)]="tipo" [ng-value]="MT_P" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
         <label class="form-check-label" for="flexRadioDefault2">
-          Lista de controle de acesso
+          Matriz com  papeis
         </label>
       </div>
     </div>
     <div class="col">
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <input class="form-check-input" [(ngModel)]="tipo" [ng-value]="CP"  type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
         <label class="form-check-label" for="flexRadioDefault2">
           Abordagem por competências
         </label>
       </div>
     </div>
-    <div class="col">
+    <!--div class="col">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
         <label class="form-check-label" for="flexCheckDefault">
           Baseado em papeis
         </label>
       </div>
-    </div>
+    </div-->
   </div>
 </div>
 
@@ -52,16 +52,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" (click)="Navigate('pub')" style="cursor: pointer;">Área pública</a>
+          <a class="nav-link active" aria-current="page" (click)="GetPermissoes_pb()" style="cursor: pointer;">Área pública</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active"  (click)="Navigate('usu')" style="cursor: pointer;">Área do usuário logado</a>
+          <a class="nav-link active"  (click)="GetPermissoes_lg()" style="cursor: pointer;">Área do usuário logado</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" (click)="Navigate('ger')" style="cursor: pointer;">Área do gerente</a>
+          <a class="nav-link active" (click)="GetPermissoes_gr()" style="cursor: pointer;">Área do gerente</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" (click)="Navigate('adm')" style="cursor: pointer;">Área do administrador</a>
+          <a class="nav-link active" (click)="GetPermissoes_adm()" style="cursor: pointer;">Área do administrador</a>
         </li>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <li class="nav-item">
@@ -128,6 +128,27 @@
       </ul>
     </div>
   </div>
+
 </nav>
 
-<router-outlet></router-outlet>
+<div>
+  <div *ngIf="permissao ==  1" class="alert alert-success" role="alert">
+    Acesso concedido !
+</div>
+<div *ngIf="permissao ==  0" class="alert alert-danger" role="alert">
+    Acesso negado !
+</div>
+
+<br><br><br>
+<div *ngIf="timer >=  0" class="alert alert-secondary" role="alert">
+    Tempo gasto pelo algorítimo: {{timer}} segundos
+</div>
+
+<div *ngIf="timer <  0" class="alert alert-secondary" role="alert">
+    Fazendo requisição...
+</div>
+
+
+</div>
+
+<!--router-outlet></router-outlet-->

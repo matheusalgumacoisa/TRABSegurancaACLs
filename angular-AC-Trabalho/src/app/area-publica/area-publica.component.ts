@@ -12,7 +12,7 @@ export class AreaPublicaComponent implements OnInit {
   timer: number = -1;
 
   constructor(private api: APIServerService) {
-    this.api.getPermissao('o', 's', 'm').then(retorno => {
+    this.api.getPermissao('USUARIO_PADRAO_123', 'publica', 'CP').then(retorno => {
       this.permissao = retorno;
       this.timer =  (Date.now() - api.lastStartTime)/1000; 
     });

@@ -17,8 +17,9 @@ export class APIServerService {
     this.lastStartTime = Date.now();
     const headers = { 'content-type': 'application/json'};
     const body = JSON.stringify({sujeito,objeto,metodo});
+    console.log('enviando: '+body);
     //await new Promise(f => setTimeout(f, 1000));
-    return await this.http.post<string>(this.rootURL + '/api/user', { user: body }, { headers }).toPromise().then((result) => {
+    return await this.http.post<string>(this.rootURL + '/api/user', body, { headers }).toPromise().then((result) => {
         console.log('resposta: '+ JSON.stringify(result));
         //return result!;
         return JSON.parse(JSON.stringify(result))[0].permissao;
