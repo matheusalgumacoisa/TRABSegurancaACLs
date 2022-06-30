@@ -14,6 +14,7 @@ export class AppComponent {
   permissao : number = -1;
   timer: number = -1;
   tipo!: string;
+  usuario!: string;
 
   constructor(private router: Router,private api: APIServerService){}
 
@@ -23,7 +24,8 @@ export class AppComponent {
 
   GetPermissoes_pb(){
     console.log('tipo: '+this.tipo);
-    this.api.getPermissao('USUARIO_PADRAO_123', 'publica', 'CP').then(retorno => {
+    console.log('usuario: '+this.usuario);
+    this.api.getPermissao(this.usuario, 'publica', this.tipo).then(retorno => {
       this.permissao = retorno;
       this.timer =  (Date.now() - this.api.lastStartTime)/1000; 
     });
@@ -31,7 +33,8 @@ export class AppComponent {
 
   GetPermissoes_lg(){
     console.log('tipo: '+this.tipo);
-    this.api.getPermissao('USUARIO_PADRAO_123', 'logado', 'CP').then(retorno => {
+    console.log('usuario: '+this.usuario);
+    this.api.getPermissao(this.usuario, 'logado', this.tipo).then(retorno => {
       this.permissao = retorno;
       this.timer =  (Date.now() - this.api.lastStartTime)/1000; 
     });
@@ -39,7 +42,8 @@ export class AppComponent {
 
   GetPermissoes_gr(){
     console.log('tipo: '+this.tipo);
-    this.api.getPermissao('USUARIO_PADRAO_123', 'gerente', 'CP').then(retorno => {
+    console.log('usuario: '+this.usuario);
+    this.api.getPermissao(this.usuario, 'gerente', this.tipo).then(retorno => {
       this.permissao = retorno;
       this.timer =  (Date.now() - this.api.lastStartTime)/1000; 
     });
@@ -47,7 +51,8 @@ export class AppComponent {
 
   GetPermissoes_adm(){
     console.log('tipo: '+this.tipo);
-    this.api.getPermissao('USUARIO_PADRAO_123', 'administrador', 'CP').then(retorno => {
+    console.log('usuario: '+this.usuario);
+    this.api.getPermissao(this.usuario, 'administrador', this.tipo).then(retorno => {
       this.permissao = retorno;
       this.timer =  (Date.now() - this.api.lastStartTime)/1000; 
     });

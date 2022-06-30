@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col">
       <div class="form-check">
-        <input class="form-check-input" [(ngModel)]="tipo" [ng-value]="MT" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <input class="form-check-input" value="MT" [(ngModel)]="tipo"  type="radio" name="flexRadioDefault" id="flexRadioDefault1">
         <label class="form-check-label" for="flexRadioDefault1">
           Matriz de controle de acesso
         </label>
@@ -14,7 +14,7 @@
     </div>
     <div class="col">
       <div class="form-check">
-        <input class="form-check-input" [(ngModel)]="tipo" [ng-value]="MT_P" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <input class="form-check-input" value="MT_P" [(ngModel)]="tipo" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
         <label class="form-check-label" for="flexRadioDefault2">
           Matriz com  papeis
         </label>
@@ -22,7 +22,7 @@
     </div>
     <div class="col">
       <div class="form-check">
-        <input class="form-check-input" [(ngModel)]="tipo" [ng-value]="CP"  type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <input class="form-check-input" value="CP" [(ngModel)]="tipo"   type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
         <label class="form-check-label" for="flexRadioDefault2">
           Abordagem por competências
         </label>
@@ -75,7 +75,7 @@
               <div class="row">
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault3" checked>
+                    <input class="form-check-input" value="NULL" [(ngModel)]="usuario"  type="radio" name="flexRadioDefault2" id="flexRadioDefault3" checked>
                     <label class="form-check-label" for="flexRadioDefault23">
                       NULL
                     </label>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault3" checked>
+                    <input class="form-check-input" value="USUARIO_PADRAO_123" [(ngModel)]="usuario" type="radio" name="flexRadioDefault2" id="flexRadioDefault3" checked>
                     <label class="form-check-label" for="flexRadioDefault23">
                       USUARIO_PADRAO_123
                     </label>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault3" checked>
+                    <input class="form-check-input" value="GERENTE_DE_ALGUMA_COISA" [(ngModel)]="usuario" type="radio" name="flexRadioDefault2" id="flexRadioDefault3" checked>
                     <label class="form-check-label" for="flexRadioDefault23">
                       GERENTE_DE_ALGUMA_COISA
                     </label>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="col">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault3" checked>
+                    <input class="form-check-input" value="ADMINISTRADOR_01" [(ngModel)]="usuario" type="radio" name="flexRadioDefault2" id="flexRadioDefault3" checked>
                     <label class="form-check-label" for="flexRadioDefault23">
                       ADMINISTRADOR_01
                     </label>
